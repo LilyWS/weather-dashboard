@@ -15,10 +15,11 @@
             <h1 class="col-12">Weather Dashboard</h1>
         </header>
         <main class="row">
-            <aside class="col-3">
-                <form class="container">
-                    <input class="col-12 my-2"></input>
-                    <button class="btn-primary btn col-12">Search</button>
+            <aside class="col-3 container">
+                <form class="row align-items-center justify-content-center">
+                    <h2>Search a City</h2>
+                    <input class="col-10 my-2"></input>
+                    <button class="btn-primary btn col-10">Search</button>
                 </form>
                 <hr/>
                 <ul>
@@ -28,11 +29,68 @@
                     <li><button class="col-10">City</button></li>
                 </ul>
             </aside>
-            <section class="col-9"id="display">
-
+            <section class="col-9 container"id="display">
+                <div id="currentWeather" class="col-12">
+                    <h2></h2>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <h3>5-Day Forecast:</h3>
+                <div id="forecast"class="col-12 row">
+                    <div class="forecastCard col-2">
+                        <h5></h5>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="forecastCard col-2">
+                        <h5></h5>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="forecastCard col-2">
+                        <h5></h5>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="forecastCard col-2">
+                        <h5></h5>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="forecastCard col-2">
+                        <h5></h5>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
             </section>
         </main>
     </div>
-    <script src=""></script>
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
