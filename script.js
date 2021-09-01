@@ -1,14 +1,38 @@
+var parameters = new URLSearchParams(window.location.search);
+var city = (parameters.get("q")) ? parameters.get("q") : "New York";
 var APIKey = "69466bb6e55e7142ed8c817a4a2917b9";
-var searchForm = document.querySelector
-var city = "Camden";
+
+var searchURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${APIKey}`;
+var search5URL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${APIKey}`;
+
 var displayEl = document.querySelector("#display");
 var currentWeatherEl = document.querySelector("#currentWeather");
 var forecastEl = document.querySelector("#forecast");
-var searchURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${APIKey}`;
-var search5URL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${APIKey}`;
+var historyEl = document.querySelector("aside").querySelector("ul");
+
 var today = moment().format("YYYY-MM-DD");
 
-console.log(moment(today).add(1, 'days').format("YYYY-MM-DD"));
+var searchHistory = (localStorage.getItem("searchHistory") != null) ? JSON.parse(localStorage.getItem("searchHistory")) : [];
+
+if(parameters.get("q")){
+    if(!searchHistory.includes(city)){
+        searchHistory.unshift(city);
+        if(searchHistory.length>8){
+            searchHistory.pop();
+        }
+    }
+    localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+
+}
+
+    //render searchHistory
+
+for(let i=0;i<searchHistory.length;i++){
+    console.log("tf")
+    let liEl = document.createElement("li");
+    liEl.innerHTML = `<a href="./index.html?q=${searchHistory[i]}"><button class="btn-primary btn col-10">${searchHistory[i]}</button></a>`;
+    historyEl.append(liEl);
+}    
 
 function getWeather(url) {
     fetch(url)
@@ -16,7 +40,6 @@ function getWeather(url) {
         return response.json();
       })
     .then(function (data) {
-        console.log(data);
         displayWeather(data);
     });
 }
@@ -27,7 +50,6 @@ function getForecastWeather(url) {
         return response.json();
       })
     .then(function (data) {
-        console.log(data);
         displayForecastWeather(data);
     });
 }

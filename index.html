@@ -11,22 +11,18 @@
 </head>
 <body>
     <div class="container-fluid">
-        <header class="row">
+        <header class="row align-items-flex-end">
             <h1 class="col-12">Weather Dashboard</h1>
         </header>
         <main class="row">
             <aside class="col-3 container">
-                <form class="row align-items-center justify-content-center">
+                <form class="row align-items-center justify-content-center" action="./index.html" method="GET">
                     <h2>Search a City</h2>
-                    <input class="col-10 my-2"></input>
-                    <button class="btn-primary btn col-10">Search</button>
+                    <input class="col-10 my-2" type="text" name="q" id="q"></input>
+                    <button class="btn-primary btn col-10" type="submit">Search</button>
                 </form>
                 <hr/>
-                <ul>
-                    <li><button class="col-10">City</button></li>
-                    <li><button class="col-10">City</button></li>
-                    <li><button class="col-10">City</button></li>
-                    <li><button class="col-10">City</button></li>
+                <ul class="d-flex flex-column justify-content-center">
                 </ul>
             </aside>
             <section class="col-9 container"id="display">
@@ -39,9 +35,11 @@
                         <li></li>
                     </ul>
                 </div>
-                <h3>5-Day Forecast:</h3>
-                <div id="forecast"class="col-12 row">
-                    <div class="forecastCard col-2">
+                <hr>
+                <h3 class="mx-5">5-Day Forecast:</h3>
+                <br>
+                <div id="forecast"class="col-12 row justify-content-around d-flex">
+                    <div class="forecastCard col-2 mx-3">
                         <h5></h5>
                         <ul>
                             <li></li>
@@ -50,7 +48,7 @@
                             <li></li>
                         </ul>
                     </div>
-                    <div class="forecastCard col-2">
+                    <div class="forecastCard col-2 mx-3">
                         <h5></h5>
                         <ul>
                             <li></li>
@@ -59,7 +57,7 @@
                             <li></li>
                         </ul>
                     </div>
-                    <div class="forecastCard col-2">
+                    <div class="forecastCard col-2 mx-3">
                         <h5></h5>
                         <ul>
                             <li></li>
@@ -68,7 +66,7 @@
                             <li></li>
                         </ul>
                     </div>
-                    <div class="forecastCard col-2">
+                    <div class="forecastCard col-2 mx-3">
                         <h5></h5>
                         <ul>
                             <li></li>
@@ -77,7 +75,7 @@
                             <li></li>
                         </ul>
                     </div>
-                    <div class="forecastCard col-2">
+                    <div class="forecastCard col-2 mx-3">
                         <h5></h5>
                         <ul>
                             <li></li>

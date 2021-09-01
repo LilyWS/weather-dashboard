@@ -1,10 +1,23 @@
 header {
-    background-color: black;
+    background-color: #181818;
     color: white;
+    text-align: center;
+    line-height: 8vh;
+    height: 8vh;
 }
 aside {
-    background-color: green;
+    padding-top: 1%;
 }
 section {
-    background-color: limegreen;
+    border-left: 3px dashed black;
+}
+
+main {
+    height: 92vh;
+    background-color: white;
+}
+
+.forecastCard {
+    background-color: navy;
+    color: white;
 }
